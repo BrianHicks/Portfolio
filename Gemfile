@@ -11,6 +11,7 @@ gem 'RedCloth'
 gem 'formtastic'
 gem 'paperclip'
 gem 'devise'
+gem 'haml'
 
 group :development, :test do
   gem 'nifty-generators'
