@@ -12,6 +12,11 @@ require 'spec_helper'
 # end
 describe PagesHelper do
   describe 'title' do
-    pending 'creates a title based on input'
+    it 'creates a title based on input' do
+      helper.title("home").should == "Brian Hicks | home"
+    end
+    it 'defaults a title when no input is provided' do
+      helper.title().should == "Brian Hicks"
+    end
   end
 end
