@@ -1,12 +1,11 @@
 Portfolio::Application.routes.draw do
 
-  get "pages/about"
-
-  get "pages/contact"
-
-  get "pages/philosophy"
-
   root :to => "pages#home"
+  
+  match 'about' => 'pages#about'
+  match 'contact' => 'pages#contact'
+  match 'philosophy' => 'pages#philosophy'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
