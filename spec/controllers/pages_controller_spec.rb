@@ -7,6 +7,7 @@ describe PagesController do
       get 'home'
       response.should be_success
     end
+    it "should have a title of home"
   end
 
   describe "GET 'about'" do
@@ -14,6 +15,7 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
+    it "should have a title of about"
   end
 
   describe "GET 'contact'" do
@@ -21,6 +23,7 @@ describe PagesController do
       get 'contact'
       response.should be_success
     end
+    it "should have a title of contact"
   end
 
   describe "GET 'philosophy'" do
@@ -28,6 +31,7 @@ describe PagesController do
       get 'philosophy'
       response.should be_success
     end
+    it "should have a title of philosophy"
   end
 
 end
