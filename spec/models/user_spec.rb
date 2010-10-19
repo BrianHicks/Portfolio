@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "name features" do
+    it "should return first name and last name for short_name"
+    it "should return all three names for full_name"
+  end
 end

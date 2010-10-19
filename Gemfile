@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.0.0'
   gem 'shoulda'
   gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'timecop'
   gem 'fakeweb'
   gem 'webrat'
