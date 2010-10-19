@@ -23,7 +23,8 @@ group :development, :test do
   gem 'fakeweb'
   gem 'webrat'
   gem 'spork'
-  gem 'autotest'
+  gem 'guard'
+  gem 'guard-rspec'
 end
 
 # Use unicorn as the web server
