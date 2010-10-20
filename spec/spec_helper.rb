@@ -9,6 +9,8 @@ Spork.prefork do
   unless defined?(Rails)
     require File.dirname(__FILE__) + "/../config/environment"
   end
+ 
+  require File.dirname(__FILE__) + "/factories.rb"
   require 'rspec/rails'
 
   # Requires supporting files with custom matchers and macros, etc,

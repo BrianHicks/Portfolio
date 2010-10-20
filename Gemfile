@@ -26,6 +26,7 @@ group :development, :test do
   gem 'spork'
   gem 'guard'
   gem 'guard-rspec'
+  gem 'faker'
 end
 
 # Use unicorn as the web server
