@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @items = PortfolioItem.all
   end
 
   def about

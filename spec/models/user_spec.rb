@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe User do
+  it { should have_many(:portfolio_items) }
+
   before :each do
     @user = Factory(:user)
   end  

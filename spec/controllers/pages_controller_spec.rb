@@ -17,6 +17,7 @@ describe PagesController do
     it "should have a title of home" do
       response.should have_selector("title", :content => "#{@base_title}Home")
     end
+    it { assigns[:items].should == PortfolioItem.all }
   end
 
   describe "GET 'about'" do
