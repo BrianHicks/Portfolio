@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101019155239) do
+ActiveRecord::Schema.define(:version => 20101020210511) do
+
+  create_table "portfolio_items", :force => true do |t|
+    t.string   "content"
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

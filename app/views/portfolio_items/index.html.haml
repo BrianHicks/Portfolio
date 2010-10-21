@@ -1,0 +1,17 @@
+- title "Portfolio Items"
+
+%table
+  %tr
+    %th Content
+    %th Title
+    %th User
+  - for portfolio_item in @portfolio_items
+    %tr
+      %td= portfolio_item.content
+      %td= portfolio_item.title
+      %td= portfolio_item.user_id
+      %td= link_to 'Show', portfolio_item
+      %td= link_to 'Edit', edit_portfolio_item_path(portfolio_item)
+      %td= link_to 'Destroy', portfolio_item, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Portfolio Item", new_portfolio_item_path

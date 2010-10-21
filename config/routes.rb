@@ -1,5 +1,7 @@
 Portfolio::Application.routes.draw do
 
+  resources :portfolio_items
+
   devise_for :users
 
   root :to => "pages#home"

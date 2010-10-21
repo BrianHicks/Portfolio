@@ -6,3 +6,9 @@ Factory.define :user do |user|
   user.password              "Test123123"
   user.password_confirmation "Test123123"
 end
+
+Factory.define :portfolio_item do |pi|
+  pi.content { Faker::Lorem.paragraph }
+  pi.title   { Faker::Lorem.words.join(" ") }
+  pi.user_id 1
+end
