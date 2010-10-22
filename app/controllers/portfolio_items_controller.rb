@@ -11,6 +11,7 @@ class PortfolioItemsController < ApplicationController
   
   def new
     @portfolio_item = PortfolioItem.new
+    5.times { @portfolio_item.assets.build }
   end
   
   def create
@@ -25,6 +26,7 @@ class PortfolioItemsController < ApplicationController
   
   def edit
     @portfolio_item = PortfolioItem.find(params[:id])
+    5.times { @portfolio_item.assets.build }
   end
   
   def update

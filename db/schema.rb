@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101020210511) do
+ActiveRecord::Schema.define(:version => 20101022001140) do
+
+  create_table "assets", :force => true do |t|
+    t.integer  "portfolio_item_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order"
+  end
 
   create_table "portfolio_items", :force => true do |t|
     t.string   "content"
