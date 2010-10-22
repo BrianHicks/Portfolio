@@ -12,6 +12,7 @@ gem 'formtastic'
 gem 'paperclip'
 gem 'devise'
 gem 'haml'
+gem 'aws-s3'
 
 group :development, :test do
   gem 'nifty-generators'
