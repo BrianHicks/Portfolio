@@ -21,6 +21,6 @@
       - unless asset.object.new_record?
         .thumbnail
           = link_to(image_tag(asset.object.image.url(:thumb)), asset.object.image.url(:original))
-          = asset.check_box :_delete
+          = asset.check_box :_destroy
   %p
     = f.submit
