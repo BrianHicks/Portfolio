@@ -1,5 +1,7 @@
 Portfolio::Application.routes.draw do
 
+  get "feed/index"
+
   resources :portfolio_items
 
   devise_for :users
