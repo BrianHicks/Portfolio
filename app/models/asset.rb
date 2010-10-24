@@ -1,10 +1,17 @@
 class Asset < ActiveRecord::Base
-  attr_accessible :image_file_name, :image_content_type, :image_file_size, :portfolio_item_id, :order
+  attr_accessible :image, :image_file_name, :image_content_type, :image_file_size, :portfolio_item_id, :order
   
   has_attached_file :image,
     :styles => {
       :thumb => "100x100#",
       :small => "300x300",
       :large => "600x600>"
-               }
+               },
+    :storage => :s3,
+    :s3_credentials => {
+      :access_key_id => ENV["S3_KEY"],
+      :secret_access_key => ENV["S3_SECRET"]
+                       },
+    :bucket => "brianthicks.com",
+    :path => "portfolio/:attachment/:id/:style/:basename.:extension"
 end
