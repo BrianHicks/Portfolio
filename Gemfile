@@ -9,10 +9,10 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'will_paginate'
 gem 'RedCloth'
 gem 'formtastic'
+gem 'aws-s3'
 gem 'paperclip'
 gem 'devise'
 gem 'haml'
-gem 'aws-s3'
 
 group :development, :test do
   gem 'nifty-generators'
