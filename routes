@@ -1,4 +1,5 @@
 (in /home/brian/Dropbox/portfolio)
+          feed_index GET    /feed/index(.:format)               {:controller=>"feed", :action=>"index"}
      portfolio_items GET    /portfolio_items(.:format)          {:action=>"index", :controller=>"portfolio_items"}
      portfolio_items POST   /portfolio_items(.:format)          {:action=>"create", :controller=>"portfolio_items"}
   new_portfolio_item GET    /portfolio_items/new(.:format)      {:action=>"new", :controller=>"portfolio_items"}
@@ -6,6 +7,7 @@
       portfolio_item GET    /portfolio_items/:id(.:format)      {:action=>"show", :controller=>"portfolio_items"}
       portfolio_item PUT    /portfolio_items/:id(.:format)      {:action=>"update", :controller=>"portfolio_items"}
       portfolio_item DELETE /portfolio_items/:id(.:format)      {:action=>"destroy", :controller=>"portfolio_items"}
+          feed_index GET    /feed(.:format)                     {:action=>"index", :controller=>"feed"}
     new_user_session GET    /users/sign_in(.:format)            {:action=>"new", :controller=>"devise/sessions"}
         user_session POST   /users/sign_in(.:format)            {:action=>"create", :controller=>"devise/sessions"}
 destroy_user_session GET    /users/sign_out(.:format)           {:action=>"destroy", :controller=>"devise/sessions"}

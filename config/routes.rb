@@ -3,6 +3,7 @@ Portfolio::Application.routes.draw do
   get "feed/index"
 
   resources :portfolio_items
+  resources :feed, :only => [:index]
 
   devise_for :users
 
@@ -11,6 +12,7 @@ Portfolio::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'contact' => 'pages#contact'
   match 'philosophy' => 'pages#philosophy'
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
