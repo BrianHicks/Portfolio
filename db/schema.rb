@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101022001140) do
+ActiveRecord::Schema.define(:version => 20101025023311) do
 
   create_table "assets", :force => true do |t|
     t.integer  "portfolio_item_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20101022001140) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "live",       :default => false
   end
 
   create_table "users", :force => true do |t|
