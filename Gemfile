@@ -13,6 +13,7 @@ gem 'aws-s3'
 gem 'paperclip'
 gem 'devise'
 gem 'haml'
+gem 'delayed_job'
 
 group :development, :test do
   gem 'nifty-generators'
