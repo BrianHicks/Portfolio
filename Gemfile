@@ -13,7 +13,8 @@ gem 'aws-s3'
 gem 'paperclip'
 gem 'devise'
 gem 'haml'
-gem 'delayed_job'
+gem 'exceptional'
+gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
 group :development, :test do
   gem 'nifty-generators'
