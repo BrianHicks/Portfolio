@@ -10,7 +10,7 @@ gem 'will_paginate'
 gem 'RedCloth'
 gem 'formtastic'
 gem 'aws-s3'
-gem 'paperclip'
+gem 'paperclip', '2.3.5'
 gem 'devise'
 gem 'haml'
 gem 'exceptional'
@@ -29,7 +29,7 @@ group :development, :test do
   gem 'spork'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'faker'
+  gem 'ffaker'
 end
 
 # Use unicorn as the web server

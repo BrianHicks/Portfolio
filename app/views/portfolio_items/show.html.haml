@@ -9,6 +9,13 @@
 %p
   %strong User:
   = @portfolio_item.user_id
+%p
+  %strong Assets:
+  - @portfolio_item.assets.each do |a|
+    = image_tag a.image.url(:thumb)
+    = image_tag a.image.url(:small)
+    %br
+
 
 %p
   = link_to "Edit", edit_portfolio_item_path(@portfolio_item)

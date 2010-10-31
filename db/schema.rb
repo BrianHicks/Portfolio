@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101025031357) do
+ActiveRecord::Schema.define(:version => 20101029164204) do
 
   create_table "assets", :force => true do |t|
     t.integer  "portfolio_item_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20101025031357) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order"
+    t.boolean  "processing"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -30,10 +31,12 @@ ActiveRecord::Schema.define(:version => 20101025031357) do
     t.datetime "run_at"
     t.datetime "locked_at"
     t.datetime "failed_at"
-    t.text     "locked_by"
+    t.string   "locked_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "portfolio_items", :force => true do |t|
     t.string   "content"

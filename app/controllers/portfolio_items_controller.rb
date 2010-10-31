@@ -17,7 +17,7 @@ class PortfolioItemsController < ApplicationController
   def create
     @portfolio_item = PortfolioItem.new(params[:portfolio_item])
     if @portfolio_item.save
-      flash[:notice] = "Successfully created portfolio item."
+      flash[:notice] = "Portfolio item created. As soon as files are uploaded Portfolio item will be made live."
       redirect_to @portfolio_item
     else
       render :action => 'new'

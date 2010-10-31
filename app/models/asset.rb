@@ -5,8 +5,8 @@ class Asset < ActiveRecord::Base
   
   has_attached_file :image,
     :styles => {
-      :thumb => "100x100#",
-      :small => "300x300",
+      :thumb => "20x20#",
+      :small => "100x100",
       :large => "600x600>"
                },
     :storage => :s3,
@@ -16,4 +16,5 @@ class Asset < ActiveRecord::Base
                        },
     :bucket => ENV["S3_BUCKET"],
     :path => "portfolio/:attachment/:id/:style/:basename.:extension"
+   
 end
