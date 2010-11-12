@@ -7,12 +7,12 @@
   .info
     .words
       %h2.title
-        = link_to object.title, object
+        = link_to object.title, piece_path(object)
       %p.description=object.content
       %p.datetime= object.updated_at.strftime("Posted on %A, %b %d")
       - unless object.category.nil?
         %p.category
-          Category: #{ link_to object.category.capitalize, "/#{object.category}" }
+          Category: #{ link_to object.category.capitalize, category_path(object.category) }
       -if user_signed_in?
         %p.actions
           = link_to 'Edit', edit_portfolio_item_path(object)

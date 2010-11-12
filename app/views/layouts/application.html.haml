@@ -21,18 +21,19 @@
             BRIAN HICKS
         %ul#navigation
           %li
-            %a{ :href => root_path } Home
+            =link_to "Home", root_path
             %ul
               %li
-                %a{ :href => "/graphic" } Graphic Design
+                =link_to "Graphic Design", category_path("graphic")
               %li
-                %a{ :href => "/web" } Web Design
+                =link_to "Web Design", category_path("web")
           %li
-            %a{ :href => about_path } About
+            =link_to "About", about_path
           %li
-            %a{ :href => philosophy_path } Philosophy
+            =link_to "Philosophy", philosophy_path
           %li
-            %a{ :href => contact_path } Contact
+            =link_to "Contact", contact_path
+          %li
         %ul#contact
           %li
             %span
