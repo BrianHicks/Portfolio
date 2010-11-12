@@ -9,9 +9,9 @@
     %br
     = f.text_field :title
   %p
-    = f.label :user_id
+    = f.label :category
     %br
-    = f.text_field :user_id
+    = f.text_field :category
   %p.newPaperclipFiles
     = f.fields_for :assets do |asset|
       - if asset.object.new_record?
