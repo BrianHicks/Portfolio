@@ -2,10 +2,12 @@ class PortfolioItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
   def index
+    page = params[:page] || 1
+    pagination_options = { :page => page, :per_page => 5 }
     if params[:category]
-      @portfolio_items = PortfolioItem.where("category = ?", params[:category]).all
+      @portfolio_items = PortfolioItem.where("category = ?", params[:category]).paginate(pagination_options)
     else
-      @portfolio_items = PortfolioItem.all
+      @portfolio_items = PortfolioItem.all.paginate(pagination_options)
     end
   end
   

@@ -1,2 +1,4 @@
 - for portfolio_item in @portfolio_items
   = render "post", :object => portfolio_item
+
+= will_paginate @portfolio_items

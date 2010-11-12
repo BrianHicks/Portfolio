@@ -6,7 +6,6 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'will_paginate'
 gem 'bluecloth'
 gem 'formtastic'
 gem 'aws-s3'
@@ -19,6 +18,7 @@ gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
 gem 'exceptional'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 gem 'jquery-rails', '0.2.5'
+gem 'will_paginate', "~> 3.0.beta"
 
 group :development, :test do
   gem 'nifty-generators'
