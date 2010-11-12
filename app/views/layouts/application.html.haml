@@ -4,6 +4,7 @@
     %title= title(@title)
     = stylesheet_link_tag "application"
     = javascript_include_tag :defaults
+    = javascript_include_tag "scrollTo-min.js"
     = csrf_meta_tag
     = auto_discovery_link_tag(:atom, "/feed/index.atom")
     = yield(:head)

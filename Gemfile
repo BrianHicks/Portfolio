@@ -7,7 +7,7 @@ gem 'rails', '3.0.0'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'will_paginate'
-gem 'RedCloth'
+gem 'bluecloth'
 gem 'formtastic'
 gem 'aws-s3'
 # update to 2.3.6 when available, which will include the fix in specified commit
@@ -18,6 +18,7 @@ gem 'compass', '>= 0.10.6'
 gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
 gem 'exceptional'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
+gem 'jquery-rails', '0.2.5'
 
 group :development, :test do
   gem 'nifty-generators'
