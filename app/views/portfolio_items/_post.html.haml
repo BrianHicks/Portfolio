@@ -1,8 +1,8 @@
-.post
+.post{ :id => object.id }
   .viewer
     .slider
-      - object.assets.each do |a|
-        %p{ :id => "full_#{a.id}" }
+      - object.assets.each_with_index do |a, i|
+        %p.full{ :name => "#{object.id}_#{i}" }
           = image_tag a.image.url(:large)
   .info
     .words
@@ -18,6 +18,6 @@
           = link_to 'Edit', edit_portfolio_item_path(object)
           = link_to 'Destroy', object, :confirm => 'Are you sure?', :method => :delete
     .thumbnails
-      - object.assets.each do |a|
-        %p{ :id => "thumb_#{a.id}" }
+      - object.assets.each_with_index do |a, i|
+        %p.thumb{ :name => "#{object.id}_#{i}" }
           = image_tag a.image.url(:thumb)
