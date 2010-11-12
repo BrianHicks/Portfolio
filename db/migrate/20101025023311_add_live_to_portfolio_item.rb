@@ -1,6 +1,6 @@
 class AddLiveToPortfolioItem < ActiveRecord::Migration
   def self.up
-    add_column :portfolio_items, :live, :boolean, :default => 0
+    add_column :portfolio_items, :live, :boolean, :default => false
   end
 
   def self.down
