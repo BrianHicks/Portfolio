@@ -6,7 +6,7 @@ class Asset < ActiveRecord::Base
   has_attached_file :image,
     :styles => {
       :thumb => "85x85#",
-      :large => "600x600>"
+      :large => "690x517>"
                },
     :storage => :s3,
     :s3_credentials => {
