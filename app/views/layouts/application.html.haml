@@ -32,7 +32,9 @@
           %li
             %a{ :href => contact_path } Contact
         %ul#contact
-          %li (719) 351-6993
+          %li
+            %span
+              (719) 351-6993
           %li
             %a{ :href => "mailto:hicksb@jbu.edu" } brian@brianthicks.com
       #content      
@@ -47,7 +49,8 @@
           %p        
             -if user_signed_in?
               = link_to "sign out", destroy_user_session_path
-              = link_to "New Portfolio Item", new_portfolio_item_path
+              |
+              = link_to "new portfolio item", new_portfolio_item_path
             -else
               = link_to "sign in", new_user_session_path
         #debug

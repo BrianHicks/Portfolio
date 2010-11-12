@@ -51,14 +51,23 @@ $basic-line-height= 1.64em
       padding: 0
       clear: both
       text-align: right
-      padding-right= $blueprint-grid-margin
-      border-right: 1px solid #CCC
       line-height: $basic-line-height
       font-size: $blueprint-font-size
       margin-bottom= 2 * $vertical-grid-unit
+      a:link, a:active, a:visited, span
+        border-right: 1px solid #CCC
+        line-height: 0
+        padding-right: $vertical-grid-unit
+        padding-top: 4px
+        padding-bottom: 4px
+      a:hover
+        border-right: 1px solid #222
       ul
         border: none
         margin-bottom: 0
+        a
+          &:link, &:active, &:visited, &:hover
+            padding-right= 2 * $vertical-grid-unit
   #content
     +column(14, last)
     +prepend(5)
@@ -112,6 +121,8 @@ $basic-line-height= 1.64em
         margin-bottom: 0
         float: left 
         img
+          margin-right: $blueprint-grid-margin
+          cursor: pointer
     
 #lower-right-flame
   position: fixed
