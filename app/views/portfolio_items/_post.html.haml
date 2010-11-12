@@ -8,8 +8,9 @@
       %h2
         = link_to object.title, object
       %p=object.content
-      %p
-        %a{ :href => "/#{object.category}" }= object.category.capitalize
+      - unless object.category.nil?
+        %p
+          %a{ :href => "/#{object.category}" }= object.category.capitalize
       -if user_signed_in?
         %p.actions
           = link_to 'Edit', edit_portfolio_item_path(object)
