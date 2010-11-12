@@ -58,6 +58,17 @@ $vertical-grid-unit= 10px
   #content
     +column(14, last)
     #colophon
+      padding= $vertical-grid-unit
+      background-color: #555
+      color: #FFF
+      p
+        margin-bottom: 0
+      a
+        &:link, &:active, &:visited
+          color: #CCC
+          text-decoration: none
+        &:hover
+          color: #FFF
     #debug
     
 #lower-right-flame

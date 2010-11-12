@@ -40,7 +40,16 @@
           = content_tag :div, msg, :id => "flash_#{name}" 
         = yield
         #colophon
-          = link_to "sign in", new_user_session_path
+          %p
+            Design and code by Brian Hicks. Interested? Read the
+            = link_to "about", about_path
+            page to learn more.
+          %p        
+            -if user_signed_in?
+              = link_to "sign out", destroy_user_session_path
+              = link_to "New Portfolio Item", new_portfolio_item_path
+            -else
+              = link_to "sign in", new_user_session_path
         #debug
           = debug(params) if Rails.env.development? 
           = @debug unless @debug.nil?
