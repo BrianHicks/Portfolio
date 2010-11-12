@@ -7,11 +7,14 @@ Portfolio::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "pages#home"
+  root :to => "portfolio_items#index"
   
   match 'about' => 'pages#about'
   match 'contact' => 'pages#contact'
   match 'philosophy' => 'pages#philosophy'
+  
+  # this guy's gotta go last. He doesn't play nice with other routes.
+  match "/:category" => "portfolio_items#index"
   
   
   # The priority is based upon order of creation:
