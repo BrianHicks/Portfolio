@@ -13,13 +13,21 @@
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body
     #container
-      #signin
-        = link_to "sign in", new_user_session_path
-      
-      - flash.each do |name, msg| 
-        = content_tag :div, msg, :id => "flash_#{name}" 
-      = content_tag :h1, yield(:title) if show_title? 
-      = yield
-      #footer
-        = debug(params) if Rails.env.development? 
-        = @debug unless @debug.nil?
+      #identifier
+        %p#logo
+          BRIAN HICKS
+        %ul#contact
+          %li (719) 351-6993
+          %li
+            751 AR HWY 16E
+            %br/
+            Siloam Springs, AR, 72761
+      #content      
+        - flash.each do |name, msg| 
+          = content_tag :div, msg, :id => "flash_#{name}" 
+        = yield
+        #colophon
+          = link_to "sign in", new_user_session_path
+        #debug
+          = debug(params) if Rails.env.development? 
+          = @debug unless @debug.nil?
