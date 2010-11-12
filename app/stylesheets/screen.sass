@@ -6,6 +6,7 @@
 @import "compass/reset"
 @import "blueprint/grid"
 @import "blueprint/typography"
+@import "blueprint/utilities"
 
 $blueprint-grid-columns= 18
 $blueprint-grid-width= 40px
@@ -14,6 +15,7 @@ $blueprint-grid-margin= 10px
 $blueprint-font-size= 15px
 
 $vertical-grid-unit= 10px
+$basic-line-height= 1.64em
 
 +blueprint-typography
   
@@ -22,9 +24,17 @@ $vertical-grid-unit= 10px
   margin-top= 5 * $vertical-grid-unit
   overflow: hidden
   width= $blueprint-container-size
+  a
+    &:link, &:active, &:visited
+      color: #666
+      text-decoration: none
+    &:hover
+      color: #333
   #identifier
     +column(4)
-    position: relative
+    position: fixed
+    left= 15 * $vertical-grid-unit
+    top= 5 * $vertical-grid-unit
     p#logo
       background: url('/images/logo-droid-serif.png') no-repeat 0 4px
       width: 129px
@@ -35,12 +45,6 @@ $vertical-grid-unit= 10px
       margin-bottom= 2 * $vertical-grid-unit
       span
         display: none
-    a
-      &:link, &:active, &:visited
-        color: #666
-        text-decoration: none
-      &:hover
-        color: #333
     ul
       list-style-type: none
       margin: 0
@@ -49,7 +53,7 @@ $vertical-grid-unit= 10px
       text-align: right
       padding-right= $blueprint-grid-margin
       border-right: 1px solid #CCC
-      line-height: 1.64em
+      line-height: $basic-line-height
       font-size: $blueprint-font-size
       margin-bottom= 2 * $vertical-grid-unit
       ul
@@ -57,6 +61,7 @@ $vertical-grid-unit= 10px
         margin-bottom: 0
   #content
     +column(14, last)
+    +prepend(5)
     #colophon
       padding= $vertical-grid-unit
       background-color: #555
@@ -71,6 +76,43 @@ $vertical-grid-unit= 10px
           color: #FFF
     #debug
     
+.post
+  .viewer
+    overflow: hidden
+    width: 100%
+    height: 517px
+    .slider
+      width: 10000px
+      p
+        text-align: center
+        margin: 0
+        +column(14, last)
+        img
+          margin: 0px auto
+  .info
+    +clearfix
+    border-top: 1px solid #CCC
+    border-bottom: 1px solid #CCC
+    padding: $vertical-grid-unit 0
+    margin-top: $vertical-grid-unit
+    margin-bottom: $vertical-grid-unit
+    .words
+      +column(8)
+      h2, p
+        margin-top: 0
+        margin-bottom: 0
+        line-height: $basic-line-height
+      h2
+        font-size= $blueprint-font-size + 5
+        margin-top: -5px
+      p
+    .thumbnails
+      +column(6, last)
+      p
+        margin-bottom: 0
+        float: left 
+        img
+    
 #lower-right-flame
   position: fixed
   z-index: -1
@@ -80,3 +122,7 @@ $vertical-grid-unit= 10px
   width: 188px
   height: 138px
   background: url('/images/corner-flame.png') no-repeat
+  
+.clear
+  clear:both
+  line-height: 0

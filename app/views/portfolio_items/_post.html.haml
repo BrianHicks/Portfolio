@@ -1,20 +1,22 @@
 .post
   .viewer
-    - object.assets.each do |a|
-      %p{ :id => "full_#{a.id}" }
-        = image_tag a.image.url(:large)
+    .slider
+      - object.assets.each do |a|
+        %p{ :id => "full_#{a.id}" }
+          = image_tag a.image.url(:large)
   .info
     .words
-      %h2
+      %h2.title
         = link_to object.title, object
-      %p=object.content
+      %p.description=object.content
       - unless object.category.nil?
-        %p
-          %a{ :href => "/#{object.category}" }= object.category.capitalize
+        %p.category
+          Category: #{ link_to object.category.capitalize, "/#{object.category}" }
       -if user_signed_in?
         %p.actions
           = link_to 'Edit', edit_portfolio_item_path(object)
           = link_to 'Destroy', object, :confirm => 'Are you sure?', :method => :delete
     .thumbnails
       - object.assets.each do |a|
-        = image_tag a.image.url(:thumb)
+        %p{ :id => "thumb_#{a.id}" }
+          = image_tag a.image.url(:thumb)
