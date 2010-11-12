@@ -18,12 +18,13 @@ $vertical-grid-unit= 10px
 +blueprint-typography
   
 #container
-  margin-left= 10 * $vertical-grid-unit
+  margin-left= 15 * $vertical-grid-unit
   margin-top= 5 * $vertical-grid-unit
   overflow: hidden
   width= $blueprint-container-size
   #identifier
     +column(4)
+    position: relative
     p#logo
       background: url('/images/logo-droid-serif.png') no-repeat 0 4px
       width: 129px
@@ -34,16 +35,26 @@ $vertical-grid-unit= 10px
       margin-bottom= 2 * $vertical-grid-unit
       span
         display: none
-    ul#contact
+    a
+      &:link, &:active, &:visited
+        color: #666
+        text-decoration: none
+      &:hover
+        color: #333
+    ul
       list-style-type: none
       margin: 0
       padding: 0
-      float: right
+      clear: both
       text-align: right
       padding-right= $blueprint-grid-margin
       border-right: 1px solid #CCC
       line-height: 1.64em
       font-size: $blueprint-font-size
+      margin-bottom= 2 * $vertical-grid-unit
+      ul
+        border: none
+        margin-bottom: 0
   #content
     +column(14, last)
     #colophon
@@ -51,6 +62,7 @@ $vertical-grid-unit= 10px
     
 #lower-right-flame
   position: fixed
+  z-index: -1
   bottom: 0
   left: 0
   background-color: #C00

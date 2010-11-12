@@ -15,7 +15,8 @@ destroy_user_session GET    /users/sign_out(.:format)           {:action=>"destr
    new_user_password GET    /users/password/new(.:format)       {:action=>"new", :controller=>"devise/passwords"}
   edit_user_password GET    /users/password/edit(.:format)      {:action=>"edit", :controller=>"devise/passwords"}
        user_password PUT    /users/password(.:format)           {:action=>"update", :controller=>"devise/passwords"}
-                root        /(.:format)                         {:controller=>"pages", :action=>"home"}
+                root        /(.:format)                         {:controller=>"portfolio_items", :action=>"index"}
                about        /about(.:format)                    {:action=>"about", :controller=>"pages"}
              contact        /contact(.:format)                  {:action=>"contact", :controller=>"pages"}
           philosophy        /philosophy(.:format)               {:action=>"philosophy", :controller=>"pages"}
+                            /:category(.:format)                {:controller=>"portfolio_items", :action=>"index"}

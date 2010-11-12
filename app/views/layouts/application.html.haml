@@ -17,6 +17,20 @@
         %p#logo
           %span
             BRIAN HICKS
+        %ul#navigation
+          %li
+            %a{ :href => root_path } Home
+            %ul
+              %li
+                %a{ :href => "/graphic" } Graphic Design
+              %li
+                %a{ :href => "/web" } Web Design
+          %li
+            %a{ :href => about_path } About
+          %li
+            %a{ :href => philosophy_path } Philosophy
+          %li
+            %a{ :href => contact_path } Contact
         %ul#contact
           %li (719) 351-6993
           %li
