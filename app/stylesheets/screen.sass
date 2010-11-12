@@ -18,6 +18,11 @@ $blueprint-font-family= "Droid Serif", serif
 $vertical-grid-unit= 10px
 $basic-line-height= 1.64em
 
+$full-image-width= 690px
+$full-image-height= 517px
+$thumb-image-width= 85px
+$thumb-image-height= 85px
+
 +blueprint-typography
   
 #container
@@ -76,6 +81,7 @@ $basic-line-height= 1.64em
       padding= $vertical-grid-unit
       background-color: #555
       color: #FFF
+      margin-bottom: $vertical-grid-unit
       p
         margin-bottom: 0
       a
@@ -95,7 +101,9 @@ $basic-line-height= 1.64em
       width: 10000px
       p
         text-align: center
-        margin: 0
+        margin-top: 0
+        margin-bottom: 0
+        margin-right: $blueprint-grid-margin
         +column(14, last)
         img
           margin: 0px auto
@@ -119,11 +127,16 @@ $basic-line-height= 1.64em
     .thumbnails
       +column(6, last)
       p
-        margin-bottom: 0
         float: left 
+        width: $thumb-image-width
+        height: $thumb-image-height
+        margin-right: $blueprint-grid-margin
+        margin-bottom: $vertical-grid-unit
+        margin-top: 0
         img
-          margin-right: $blueprint-grid-margin
           cursor: pointer
+          &:nth-child(3n)
+            margin-right: 0
     
 #lower-right-flame
   position: fixed
