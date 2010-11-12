@@ -13,6 +13,8 @@ gem 'aws-s3'
 gem 'paperclip', '2.3.5'
 gem 'devise'
 gem 'haml'
+gem 'compass', '>= 0.10.6'
+gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
 gem 'exceptional'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
