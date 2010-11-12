@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101029164204) do
+ActiveRecord::Schema.define(:version => 20101112064403) do
 
   create_table "assets", :force => true do |t|
     t.integer  "portfolio_item_id"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(:version => 20101029164204) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "live",       :default => false
+    t.string   "category"
   end
+
+  add_index "portfolio_items", ["category"], :name => "index_portfolio_items_on_category"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
