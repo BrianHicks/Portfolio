@@ -11,12 +11,11 @@ $blueprint-grid-columns= 18
 $blueprint-grid-width= 40px
 $blueprint-grid-margin= 10px
 
-$blueprint-font-size= 11px
+$blueprint-font-size= 15px
 
 $vertical-grid-unit= 10px
 
-body 
-  +blueprint-typography
++blueprint-typography
   
 #container
   margin-left= 10 * $vertical-grid-unit
@@ -26,9 +25,9 @@ body
   #identifier
     +column(4)
     p#logo
-      background: url('/images/logo-droid-serif.png') no-repeat
+      background: url('/images/logo-droid-serif.png') no-repeat 0 4px
       width: 129px
-      height: 69px
+      height: 75px
       float: right
       padding-right= $blueprint-grid-margin
       border-right: 1px solid #000
@@ -44,6 +43,7 @@ body
       padding-right= $blueprint-grid-margin
       border-right: 1px solid #CCC
       line-height: 1.64em
+      font-size: $blueprint-font-size
   #content
     +column(14, last)
     #colophon
