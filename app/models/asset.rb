@@ -5,8 +5,7 @@ class Asset < ActiveRecord::Base
   
   has_attached_file :image,
     :styles => {
-      :thumb => "20x20#",
-      :small => "100x100",
+      :thumb => "100x100#",
       :large => "600x600>"
                },
     :storage => :s3,
@@ -17,4 +16,29 @@ class Asset < ActiveRecord::Base
     :bucket => ENV["S3_BUCKET"],
     :path => "portfolio/:attachment/:id/:style/:basename.:extension"
    
+  before_image_post_process do |image|
+    if image_changed?
+      processing = true
+      false
+    end
+  end
+
+  after_save do |image|
+    if image.image_changed?
+      image.delay.regenerate_styles!
+    end
+  end
+
+  def regenerate_styles!
+    self.image.reprocess!
+    self.processing = false
+    self.save(false)
+  end
+
+  def image_changed?
+    self.image_file_size_changed? ||
+    self.image_file_name_changed? ||
+    self.image_content_type_changed?
+  end
 end
+
