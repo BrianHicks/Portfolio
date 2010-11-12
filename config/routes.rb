@@ -13,8 +13,10 @@ Portfolio::Application.routes.draw do
   match 'contact' => 'pages#contact'
   match 'philosophy' => 'pages#philosophy'
   
+  match '/piece/:id' => 'portfolio_items#show', :as => "piece"
+  
   # this guy's gotta go last. He doesn't play nice with other routes.
-  match "/:category" => "portfolio_items#index"
+  match "/:category" => "portfolio_items#index", :as => "category"
   
   
   # The priority is based upon order of creation:
