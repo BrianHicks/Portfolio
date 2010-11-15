@@ -4,7 +4,8 @@ var locked = false;
 
 var touches = {
   first : [],
-  last : []
+  last : [],
+  current : []
 }
 
 var dimensions = {
@@ -18,25 +19,59 @@ var dimensions = {
   }
 }
 
+var panes = {
+  total : 6,
+  current : 1,
+  width : 0,
+  x : 0,
+  slider : null,
+  moveTo : function(x) {
+    if (!mathHelper.isNaN(x)) {
+      var currentx = parseInt(this.slider.style.left, 10);
+      this.slider.style.left = (currentx + x) + "px";   
+    }
+  }
+}
+
 function setUpInteraction() {
+  // cache elements
+  container = document.getElementById("container");
+  panes.slider = $("#inner")[0];
+  var bodyEl = $("body")[0];
+  
   if (isiOs()) {
     // set size of container
-    var container = $("#container");
-
     if (isTablet()) {
-      container.css("width", dimensions.iPad.width);
-      container.css("height", dimensions.iPad.height);
+      container.style.width = dimensions.iPad.width;
+      container.style.height = dimensions.iPad.height;
+      panes.width = dimensions.iPad.width;
       $("#inner").addClass("ipad");
     } else {
-      container.css("width", dimensions.iPhone.width);
-      container.css("height", dimensions.iPhone.height);
+      container.style.width = dimensions.iPhone.width;
+      container.style.height = dimensions.iPhone.height;
+      panes.width = dimensions.iPhone.width;
       $("#inner").addClass("iphone");
     }
     
     // add global event listeners
-    var bodyEl = $("body")[0];
     addEventListener("orientationchange", checkOrientation);
     checkOrientation();
+    bodyEl.ontouchstart = function(e) {
+      var touch = e.touches[0];
+      touches.first = [touch.pageX, touch.pageY];
+    }
+    bodyEl.ontouchmove = function(e) {
+      var touch = e.touches[0]
+      touches.last = touches.current;
+      touches.current = [touch.pageX, touch.pageY];
+      panes.moveTo(mathHelper.distance(touches.last, touches.current));
+      e.preventDefault();
+    }
+    bodyEl.ontouchend = function() {
+      panes.moveTo(80);
+      touches.last,touches.current = [];
+    }
+    /*
     bodyEl.ontouchstart = function(e) {
       var touch = e.touches[0];
       touches.first = [touch.pageX, touch.pageY];
@@ -54,6 +89,7 @@ function setUpInteraction() {
       statusString += "Direction: " + mathHelper.direction(touches.first, touches.last);
       console.log(statusString);
     }
+    */
   } else {
     // add buttons
     // keyboard events
@@ -92,6 +128,13 @@ var mathHelper = {
   },
   direction : function(coord0, coord1) {
     return coord0[0] > coord1[0] ? "left" : "right";
+  },
+  isNaN : function(num) { 
+    if (num == 0) { 
+      return false 
+    } else { 
+      return !(0 > num || 0 < num); 
+    } 
   }
 }
 
