@@ -12,6 +12,7 @@ Portfolio::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'contact' => 'pages#contact'
   match 'philosophy' => 'pages#philosophy'
+  match 'philosophy/read' => 'pages#read'
   
   match '/piece/:id' => 'portfolio_items#show', :as => "piece"
   

@@ -19,5 +19,6 @@ destroy_user_session GET    /users/sign_out(.:format)           {:action=>"destr
                about        /about(.:format)                    {:action=>"about", :controller=>"pages"}
              contact        /contact(.:format)                  {:action=>"contact", :controller=>"pages"}
           philosophy        /philosophy(.:format)               {:action=>"philosophy", :controller=>"pages"}
+     philosophy_read        /philosophy/read(.:format)          {:controller=>"pages", :action=>"read"}
                piece        /piece/:id(.:format)                {:controller=>"portfolio_items", :action=>"show"}
             category        /:category(.:format)                {:controller=>"portfolio_items", :action=>"index"}

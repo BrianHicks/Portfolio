@@ -1,0 +1,39 @@
+@import "compass/reset"
+
+$num_panes= 3
+$ipad_width= 1024px
+$ipad_height= 768px
+$iphone_width= 320px
+$iphone_height= 480px
+
+body
+  background-color: #DDF
+  
+#container
+  width: 200px
+  height: 200px
+  background-color: #FFF
+  #controls
+  #pages
+    height: 100%
+    overflow: hidden
+    #inner.ipad
+      // full width panes
+      width= $num_panes * $ipad_width
+      height= $ipad_height
+      .page
+        width= 50% / $num_panes
+        height= $iphone_height
+    #inner.iphone
+      // half width panes
+      width= $num_panes * 2 * $iphone_width
+      height= $iphone_height
+      .page
+        width= 100% / $num_panes
+        height= $iphone_height
+    #inner
+      .page
+        float: left
+
+.hidden
+  display: none

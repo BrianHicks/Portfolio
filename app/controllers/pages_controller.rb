@@ -15,5 +15,8 @@ class PagesController < ApplicationController
   def philosophy
     @title = "Philosophy"
   end
-
+  
+  def read #philosophy/read
+    render :layout => false
+  end
 end
