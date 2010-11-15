@@ -7,12 +7,15 @@ var touches = {
   last : []
 }
 
-function isiOs() {
-  return navigator.platform.match(/(iPad|iPod|iPhone)/i) ? true : false;
-}
-
-function isTablet() {
-  return navigator.platform.match(/iPad/i) ? true : false;
+var dimensions = {
+  iPad : {
+    "width" : "1024px",
+    "height" : "768px"
+  },
+  iPhone : {
+    "width" : "320px",
+    "height" : "480px"
+  }
 }
 
 function setUpInteraction() {
@@ -21,12 +24,12 @@ function setUpInteraction() {
     var container = $("#container");
 
     if (isTablet()) {
-      container.css("width", "1024px");
-      container.css("height", "768px");
+      container.css("width", dimensions.iPad.width);
+      container.css("height", dimensions.iPad.height);
       $("#inner").addClass("ipad");
     } else {
-      container.css("width", "320px");
-      container.css("height", "480px");
+      container.css("width", dimensions.iPhone.width);
+      container.css("height", dimensions.iPhone.height);
       $("#inner").addClass("iphone");
     }
     
@@ -90,6 +93,14 @@ var mathHelper = {
   direction : function(coord0, coord1) {
     return coord0[0] > coord1[0] ? "left" : "right";
   }
+}
+
+function isiOs() {
+  return navigator.platform.match(/(iPad|iPod|iPhone)/i) ? true : false;
+}
+
+function isTablet() {
+  return navigator.platform.match(/iPad/i) ? true : false;
 }
 
 $(document).ready(function() {
