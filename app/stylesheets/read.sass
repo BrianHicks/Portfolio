@@ -1,42 +1,22 @@
-@import "compass/reset"
+body 
+  background-color: #376daa
 
-$num_panes= 6
-$ipad_width= 1024px
-$ipad_height= 768px
-$iphone_width= 320px
-$iphone_height= 480px
+.card 
+  text-align: center
+  color: #204167
+  text-shadow: #3F80CA 0 1px 0
+  font-size: 72px
+  padding: 80px 40px
 
-body
-  background-color: #DDF
+.x-phone .card 
+  padding: 15px
+  font-size: 36px
 
-#container
-  width: 200px
-  height: 200px
-  background-color: #FFF
-  #controls
-  #pages
-    height: 100%
-    overflow: hidden
-    #inner.ipad
-      width= $ipad_width / 2 * $num_panes
-      height= $ipad_height
-      .page
-        width= $ipad_width / 2
-        height= $ipad_height
-      #iphone
-        display: none
-    #inner.iphone
-      width= $iphone_width * $num_panes
-      height= $iphone_height
-      .page
-        width= $iphone_width
-        height= $iphone_height
-      #ipad
-        display: none
-    #inner
-      position: relative
-      .page
-        float: left
+.card p 
+  font-size: 24px
+  line-height: 30px
 
-.hidden
-  display: none
+.x-phone .card p 
+  font-size: 16px
+  line-height: 18px
+

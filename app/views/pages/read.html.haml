@@ -1,43 +1,10 @@
 !!! html
 %html
   %head
-    %title Design Philosophy
-    = javascript_include_tag "jquery.js"
-    = javascript_include_tag "scrollTo-min.js"
-    = javascript_include_tag "philosophy.js"
-    = stylesheet_link_tag "compiled/read.css"
-    
-    %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0" }
-    / %link{:rel => "apple-touch-icon", :href="image.png"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    %title Carousel
+    = stylesheet_link_tag "sencha-touch"
+    = stylesheet_link_tag "compiled/read"
+    = javascript_include_tag "sencha-touch.js"
+    = javascript_include_tag "read.js"
   %body
-    #container
-      #controls
-      #pages
-        #inner
-          #ipad
-            .page{ :style => "background-color: #F00;" }
-              1 iPad
-            .page{ :style => "background-color: #0F0;" }
-              2 iPad
-            .page{ :style => "background-color: #00F;" }
-              3 iPad
-            .page{ :style => "background-color: #FF0;" }
-              4 iPad
-            .page{ :style => "background-color: #F0F;" }
-              5 iPad
-            .page{ :style => "background-color: #0FF;" }
-              6 iPad
-          #iphone
-            .page{ :style => "background-color: #F00;" }
-              1 iPhone
-            .page{ :style => "background-color: #0F0;" }
-              2 iPhone
-            .page{ :style => "background-color: #00F;" }
-              3 iPhone
-            .page{ :style => "background-color: #FF0;" }
-              4 iPhone
-            .page{ :style => "background-color: #F0F;" }
-              5 iPhone
-            .page{ :style => "background-color: #0FF;" }
-              6 iPhone
