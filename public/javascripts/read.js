@@ -18,7 +18,7 @@ Ext.setup({
             xtype: 'component',
             contentEl: this.dom
           }
-          if (this.hasCls("static") == false) {
+          if (this.hasCls("static") == false || Ext.is.iPod || Ext.is.iPhone || Ext.is.Android) {
             card['scroll'] = 'vertical'
           }
           cards.push(card);

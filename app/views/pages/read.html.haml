@@ -2,7 +2,7 @@
 %html
   %head
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
-    %title Carousel
+    %title Brian Hicks
     = stylesheet_link_tag "sencha-touch"
     = stylesheet_link_tag "compiled/read"
     = javascript_include_tag "sencha-touch.js"
@@ -37,9 +37,31 @@
       %p When the process of simplicity is completed, the end result is an intuitively designed user experience, where each visitor can be sure that their actions will have and only will have their intended consequences; that is, nothing will happen that the user did not explicitly request while everything that the user does request will happen flawlessly. This of course does not leave out the element of surprise, which is important in giving a website personality, if so desired.
     .entry.left
       / usability page
+      = image_tag "philosophy_headers/usability.png", :alt => "Usability", :title => "Usability"
+      %p Usability is the user experience as a whole. This takes into account the experience of the regular users who visit the site as well as those with special needs, such as those with vision impairments such as colorblindness or those using a screen reader.
+      %p At a more finely grained level, this also is where the website must be tailored to the needs of it’s intended audience. For example, text size must be enlarged for a site aimed at older people. Or if the site is for business users, they will likely want many more options which must be organized accordingly. The goal is a streamlined and intuitive user experience.
+      %blockquote.right.large
+        People ignore design that ignores people.
+        %span.attribution
+          Frank Chimero
+      %p There is also the matter of the number of interfaces that the user has to deal with. On the survey website I’m building, there are only two apparent interfaces: user mangement and survey management. Another quote from Maeda applies here: “Organization can make a system of many appear fewer.” In reality, a typical user has to deal with the management of many variables such as the type of question in the survey and how many there questions there are. However, by only showing small parts of many complex interfaces at once, the end seems to have very few real interfaces.
+      %p Of course, it’s best if you can get your users to tell you where they’re stumbling. That can be taken care of through usability testing, whether that is formalized using eye tracking software, or informal the “hallway usability tests” used by Joel Spolsky. It is important not to misinterpret the results of these, but as Spolsky says, "If you do this to five people, you will learn 95% of what there is to learn about usability problems in your code."
     .entry.right
       / usefulness page
+      = image_tag "philosophy_headers/usefulness.png", :alt => "Usefulness", :title => "Usefulness"
+      %p Utility is, at it’s base, what the website does. It’s the motivation for the user to stay on the site, so it’s important to get the concept behind the site correct. Usability testing can help with this, but figuring out why users go to and stay on a site is not really findable by such methods. To do this, it’s important to listen to your users feedback on a site (real users, not testers) and look at the statistics of the site itself. What are the most visited pages and sections? There are ways to track where your real users are going and what they are doing, and for this purpose that kind of surveillance is very useful.
+      %p It’s a good idea to hold the idea of a site very loosely. If a site starts out as a social network for programmers but then turns into one for designers, it’s a horrible idea to try and force programmers in and designers out. In fact, that’s the worst thing you could do, especially if there is a community established on the site. On the other hand, it’s also good not to be continually questioning an idea. It’s very useful especially in designing a website to know what idea you are pushing for.
+      %blockquote.left
+        The difference between utility and utility plus beauty is the difference between telephone wires and the spider web.
+        %span.attribution
+          Edwin Way Teale
+      %p Unfortunately, some sites are just not successful. And in these cases, the idea may be bad, but there may also be problems in the market: you may be up against bigger and more entrenched competition. 
+      %p Of course, it doesn’t help if a site has no meaning for it’s existence in the first place. 
     .entry.right
       / conclusion page
+      = image_tag "philosophy_headers/now-what.png", :alt => "Now What?", :title => "Now What?"
     .entry.right
       / thanks page
+      %p Thanks to everyone who helped make my education a reality, especially the professors and staff at JBU and my wife Anne.
+      %p Fonts: Helvetica and Lobster
+      %p Built with Sencha Touch, powered by Ruby on Rails.

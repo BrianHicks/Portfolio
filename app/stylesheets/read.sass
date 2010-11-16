@@ -9,8 +9,10 @@ $off-white: #D8D8D3
 $font-size= 18px
 $line-height= $font-size * 1.4
 
+=gradient-with-image($img)
+  +radial_gradient(color-stops($lighter-green, $green 500px), center center, url($img))
+
 body 
-  background-color: $green
   +radial-gradient(color-stops($lighter-green, $green 500px), center center)
 
 .card
@@ -21,20 +23,31 @@ body
   width: 30%
   height: 90%
   +radial-gradient(color-stops($lighter-green, $green 500px), center center)
-
+  
+  img
+    margin-bottom: $line-height
+    
+  p
+    margin-top: $line-height / 2
+  
   &:nth-child(1)
-    background: url("/images/philosophy_bg/0.png")
+    +gradient-with-image("/images/philosophy_bg/0.png")
   &:nth-child(2)
-    background: url("/images/philosophy_bg/1.png")
-    padding-top: 20%
+    +gradient-with-image("/images/philosophy_bg/1.png")
+    padding-top: 5%
   &:nth-child(3)
-    background: url("/images/philosophy_bg/2.png")
+    +gradient-with-image("/images/philosophy_bg/2.png")
+    padding-top: 19%
   &:nth-child(4)
-    background: url("/images/philosophy_bg/3.png")
+    +gradient-with-image("/images/philosophy_bg/3.png")
   &:nth-child(5)
-    background: url("/images/philosophy_bg/4.png")
+    +gradient-with-image("/images/philosophy_bg/4.png")
   &:nth-cihld(6)
-    background: url("/images/philosophy_bg/5.png")
+    +gradient-with-image("/images/philosophy_bg/5.png")
+  &:nth-child(7)
+    +gradient-with-image("/images/philosophy_bg/6.png")
+  &:nth-child(8)
+    +gradient-with-image("/images/philosophy_bg/7.png")
 
   .right
     padding-left: 55%
@@ -48,7 +61,6 @@ body
     padding-bottom: 5%
     
   blockquote
-    padding-top: 1em
     padding-bottom: 1em
     font-size: 0.9em
     line-height: font-size / $line-height
