@@ -6,7 +6,6 @@ Ext.setup({
     onReady: function() {
         // Apply special styles for iPhones and iPods
         if (Ext.is.iPod || Ext.is.iPhone || Ext.is.Android) {
-          alert("is");
           Ext.select('body').addCls("smallscreen");
         }
         
@@ -15,11 +14,14 @@ Ext.setup({
             cards = [];
             
         entries.each(function() {
-          cards.push({
-              xtype: 'component',
-              contentEl: this.dom,
-              scroll: 'vertical'
-          });
+          var card = {
+            xtype: 'component',
+            contentEl: this.dom
+          }
+          if (this.hasCls("static") == false) {
+            card['scroll'] = 'vertical'
+          }
+          cards.push(card);
         });
     
         // Create a Carousel of Items
