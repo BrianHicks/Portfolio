@@ -1,22 +1,71 @@
+@import "compass/css3/gradient"
+
+$green: #83A603
+$lighter-green: #A3BF3B
+$brown: #736345
+$tan: #BFB195
+$off-white: #D8D8D3
+
+$font-size= 18px
+$line-height= $font-size * 1.4
+
 body 
-  background-color: #376daa
+  background-color: $green
+  +radial-gradient(color-stops($lighter-green, $green 500px), center center)
 
-.card 
-  text-align: center
-  color: #204167
-  text-shadow: #3F80CA 0 1px 0
-  font-size: 72px
-  padding: 80px 40px
+.card
+  text-align: left
+  color: $off-white
+  font-size: $font-size
+  line-height: $line-height
+  width: 30%
+  height: 90%
+  +radial-gradient(color-stops($lighter-green, $green 500px), center center)
 
-.x-phone .card 
-  padding: 15px
-  font-size: 36px
-
-.card p 
-  font-size: 24px
-  line-height: 30px
-
-.x-phone .card p 
-  font-size: 16px
-  line-height: 18px
-
+  .right
+    padding-left: 55%
+    padding-right: 5%
+    padding-top: 5%
+    padding-bottom: 5%
+  .left
+    padding-left: 5%
+    padding-right: 55%
+    padding-top: 5%
+    padding-bottom: 5%
+    
+  blockquote
+    padding-top: 1em
+    padding-bottom: 1em
+    font-size: 0.9em
+    line-height: font-size / $line-height
+    width: 50%
+    &.large
+      font-size: 1.2em
+      line-height: font-size / $line-height
+    &.left
+      float: left
+      margin-right: 2em
+      padding-right: 0
+      padding-left: 0
+    &.right
+      float: right
+      margin-left: 2em
+      padding-left: 0
+      padding-right: 0
+    .attribution
+      display: block
+      text-align: right
+      
+      &:before
+        content: "—"
+    
+.smallscreen
+  .card
+    blockquote
+      padding-left: 0
+      padding-right: 0
+      width: 100%
+  
+.card:nth-child(1)
+.two
+.three

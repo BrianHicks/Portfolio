@@ -1,46 +1,33 @@
 Ext.setup({
-    tabletStartupScreen: 'tablet_startup.png',
-    phoneStartupScreen: 'phone_startup.png',
-    icon: 'icon.png',
+    tabletStartupScreen: '/images/tablet_startup.png',
+    phoneStartupScreen: '/images/phone_startup.png',
+    icon: '/images/icon.png',
     glossOnIcon: false,
     onReady: function() {
+        // Apply special styles for iPhones and iPods
+        if (Ext.is.iPod || Ext.is.iPhone || Ext.is.Android) {
+          alert("is");
+          Ext.select('body').addCls("smallscreen");
+        }
+        
+        // Get entries
+        var entries = Ext.select('.entry'),
+            cards = [];
+            
+        entries.each(function() {
+          cards.push({
+              xtype: 'component',
+              contentEl: this.dom,
+              scroll: 'vertical'
+          });
+        });
+    
         // Create a Carousel of Items
         var carousel1 = new Ext.Carousel({
             defaults: {
                 cls: 'card'
             },
-            items: [{
-                html: '<h1>Carousel</h1><p>Navigate the two carousels on this page by swiping left/right or clicking on one side of the circle indicators below.</p>'
-            },
-            {
-                title: 'Tab 2',
-                html: '2'
-            },
-            {
-                title: 'Tab 3',
-                html: '3'
-            }]
-        });
-        
-        var carousel2 = new Ext.Carousel({
-            direction: 'vertical',
-            ui: 'light',
-            activeItem: 1,
-            defaults: {
-                cls: 'card'
-            },
-            items: [{
-                title: 'Tab 1',
-                html: '<h1>ui="light"</h1>'
-            },
-            {
-                title: 'Tab 2',
-                html: '2'
-            },
-            {
-                title: 'Tab 3',
-                html: '3'
-            }]
+            items: cards
         });
 
         new Ext.Panel({
@@ -52,7 +39,7 @@ Ext.setup({
             defaults: {
                 flex: 1
             },
-            items: [carousel1, carousel2]
+            items: [carousel1]
         });
     }
 });
