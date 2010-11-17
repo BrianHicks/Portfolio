@@ -1,0 +1,25 @@
+# v1
+CACHE MANIFEST
+/images/philosophy_bg/0.png
+/images/philosophy_bg/1.png
+/images/philosophy_bg/2.png
+/images/philosophy_bg/3.png
+/images/philosophy_bg/4.png
+/images/philosophy_bg/5.png
+/images/philosophy_bg/6.png
+/images/philosophy_bg/7.png
+
+/images/philosophy_bg/iphone/0.png
+/images/philosophy_bg/iphone/1.png
+/images/philosophy_bg/iphone/2.png
+/images/philosophy_bg/iphone/3.png
+/images/philosophy_bg/iphone/4.png
+/images/philosophy_bg/iphone/5.png
+/images/philosophy_bg/iphone/6.png
+/images/philosophy_bg/iphone/7.png
+
+/stylesheets/compiled/read.css
+/stylesheets/sencha-touch.css
+
+/javascripts/read.js
+/javascripts/sencha-touch.js
