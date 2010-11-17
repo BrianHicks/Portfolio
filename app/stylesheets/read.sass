@@ -29,11 +29,8 @@ a
   line-height: $line-height
   width: 30%
   height: 90%
-  +radial-gradient(color-stops($lighter-green, $green 500px), center center)
-  
-  img
-    margin-bottom: $line-height
-    
+  +radial-gradient(color-stops($lighter-green, $green 500px), center center)    
+
   p
     margin-top: $line-height / 2
   
@@ -94,6 +91,9 @@ a
     
 .smallscreen
   .card
+    width: 60%
+    img
+      width: 75%
     blockquote
       padding-left: 0
       padding-right: 0
@@ -116,3 +116,15 @@ a
       background-image: url("/images/philosophy_bg/iphone/6.png")
     &:nth-child(8)
       background-image: url("/images/philosophy_bg/iphone/7.png")
+
+  .right
+    padding-left: 35%
+    padding-right: 5%
+    padding-top: 5%
+    padding-bottom: 5%
+    text-align: right
+  .left
+    padding-left: 5%
+    padding-right: 35%
+    padding-top: 5%
+    padding-bottom: 5%
