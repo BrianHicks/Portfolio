@@ -9,9 +9,7 @@ atom_feed do |feed|
       entry.title(pi.title)
       entry.content(pi.content, :type => 'html')
       
-      entry.author do |author|
-        User.find(pi.user_id).short_name
-      end
+      entry.author "Brian Hicks"
     end
   end
 end
