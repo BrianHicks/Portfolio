@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  # set up some static pages under routing
   def home
     @title = "Home"
     @items = PortfolioItem.all
@@ -15,8 +16,8 @@ class PagesController < ApplicationController
   def philosophy
     @title = "Philosophy"
   end
-  
-  def read #philosophy/read
+
+  def read #philosophy/read - Sencha app doesn't use layout
     render :layout => false
   end
 end

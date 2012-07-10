@@ -13,6 +13,26 @@ with Ruby on Rails. It hosts the image assets on Amazon S3 and uses
 jQuery for the front-end interaction. You can check out the source
 as well as more techical details of how I built the site here on Github.
 
+This app was made with the [12 Factor App][12-factor-app] principles in mind.
+
+This app is live at [www.brianthicks.com][live-installation].
+
+[12-factor-app]: http://www.12factor.net/ "The 12 Factor App"
+[live-installation]: http://www.brianthicks.com/ "www.brianthicks.com"
+
+The Good Parts
+--------------
+
+Here's a list of what I consider the best parts of the app:
+
+ - `app/models/asset.rb`: The meat of the assets on the site.
+ - `public/javascripts/read.js`: Code against Sencha Touch to build the mobile
+   web philosophy application. If possible, use an iOS device to try it out.
+
+In addition, this app is set up to do asset processing asynchronously with
+delayed\_job, is currently deployed to Heroku, and has a more-or-less complete
+test suite using RSpec and Factory Girl.
+
 Deployment
 ----------
 

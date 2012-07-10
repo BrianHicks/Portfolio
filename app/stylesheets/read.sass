@@ -1,5 +1,7 @@
 @import "compass/css3/gradient"
 
+/* These are styles for the philosphy mobile web app */
+
 $green: #83A603
 $lighter-green: #A3BF3B
 $brown: #736345
@@ -9,11 +11,7 @@ $off-white: #D8D8D3
 $font-size= 18px
 $line-height= $font-size * 1.4
 
-=gradient-with-image($img)
-  +radial_gradient(color-stops($lighter-green, $green 500px), center center, url($img))
-  background-repeat: no-repeat
-
-body 
+body
   +radial-gradient(color-stops($lighter-green, $green 500px), center center)
 
 a
@@ -29,11 +27,11 @@ a
   line-height: $line-height
   width: 30%
   height: 90%
-  +radial-gradient(color-stops($lighter-green, $green 500px), center center)    
+  +radial-gradient(color-stops($lighter-green, $green 500px), center center)
 
   p
     margin-top: $line-height / 2
-  
+
   &:nth-child(1)
     background: url("/images/philosophy_bg/0.png") no-repeat right top
   &:nth-child(2)
@@ -63,7 +61,7 @@ a
     padding-right: 55%
     padding-top: 5%
     padding-bottom: 5%
-    
+
   blockquote
     padding-bottom: 1em
     font-size: 0.9em
@@ -85,10 +83,10 @@ a
     .attribution
       display: block
       text-align: right
-      
+
       &:before
         content: "—"
-    
+
 .smallscreen
   .card
     width: 60%

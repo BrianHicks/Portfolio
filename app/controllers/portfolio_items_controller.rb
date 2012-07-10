@@ -1,6 +1,6 @@
 class PortfolioItemsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  
+
   def index
     page = params[:page] || 1
     pagination_options = { :page => page, :per_page => 5 }
@@ -10,16 +10,16 @@ class PortfolioItemsController < ApplicationController
       @portfolio_items = PortfolioItem.all.paginate(pagination_options)
     end
   end
-  
+
   def show
     @portfolio_item = PortfolioItem.find(params[:id])
   end
-  
+
   def new
     @portfolio_item = PortfolioItem.new
-    5.times { @portfolio_item.assets.build }
+    5.times { @portfolio_item.assets.build } # 5 initial portfolio items in the form
   end
-  
+
   def create
     @portfolio_item = PortfolioItem.new(params[:portfolio_item])
     if @portfolio_item.save
@@ -29,12 +29,12 @@ class PortfolioItemsController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @portfolio_item = PortfolioItem.find(params[:id])
     5.times { @portfolio_item.assets.build }
   end
-  
+
   def update
     @portfolio_item = PortfolioItem.find(params[:id])
     if @portfolio_item.update_attributes(params[:portfolio_item])
@@ -44,7 +44,7 @@ class PortfolioItemsController < ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @portfolio_item = PortfolioItem.find(params[:id])
     @portfolio_item.destroy

@@ -4,15 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
+  # Setup accessible attributes for the model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  
+
   has_many :portfolio_items
-  
+
   def short_name
     "#{first_name} #{last_name}"
   end
-  
+
   def full_name
     "#{first_name} #{middle_name} #{last_name}"
   end

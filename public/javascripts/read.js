@@ -5,25 +5,26 @@ Ext.setup({
     glossOnIcon: false,
     onReady: function() {
         // Apply special styles for iPhones and iPods
-        if (Ext.is.iPod || Ext.is.iPhone || Ext.is.Android) {
+        var isMobile = Ext.is.iPod || Ext.is.iPhone || Ext.is.Android;
+        if (isMobile) {
           Ext.select('body').addCls("smallscreen");
         }
-        
+
         // Get entries
         var entries = Ext.select('.entry'),
             cards = [];
-            
+
         entries.each(function() {
           var card = {
             xtype: 'component',
             contentEl: this.dom
-          }
-          if (this.hasCls("static") == false || Ext.is.iPod || Ext.is.iPhone || Ext.is.Android) {
-            card['scroll'] = 'vertical'
+          };
+          if (this.hasCls("static") === false || isMobile) {
+            card['scroll'] = 'vertical';
           }
           cards.push(card);
         });
-    
+
         // Create a Carousel of Items
         var carousel1 = new Ext.Carousel({
             defaults: {

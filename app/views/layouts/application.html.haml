@@ -38,19 +38,19 @@
         %ul#contact
           %li
             %span
-              (719) 351-6993
+              (314) 810-9760
           %li
             %a{ :href => "mailto:hicksb@jbu.edu" } brian@brianthicks.com
-      #content      
-        - flash.each do |name, msg| 
-          = content_tag :div, msg, :id => "flash_#{name}" 
+      #content
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
         = yield
         #colophon
           %p
             Design and code by Brian Hicks. Interested? Read the
             = link_to "about", about_path
             page to learn more.
-          %p        
+          %p
             -if user_signed_in?
               = link_to "sign out", destroy_user_session_path
               |
@@ -58,7 +58,7 @@
             -else
               = link_to "sign in", new_user_session_path
         #debug
-          = debug(params) if Rails.env.development? 
+          = debug(params) if Rails.env.development?
           = @debug unless @debug.nil?
 
   #lower-right-flame

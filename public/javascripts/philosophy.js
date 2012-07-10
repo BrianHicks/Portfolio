@@ -6,7 +6,7 @@ var touches = {
   first : [],
   last : [],
   current : []
-}
+};
 
 var dimensions = {
   iPad : {
@@ -17,7 +17,7 @@ var dimensions = {
     "width" : "320px",
     "height" : "480px"
   }
-}
+};
 
 var panes = {
   total : 6,
@@ -28,17 +28,17 @@ var panes = {
   moveTo : function(x) {
     if (!mathHelper.isNaN(x)) {
       var currentx = parseInt(this.slider.style.left, 10);
-      this.slider.style.left = (currentx + x) + "px";   
+      this.slider.style.left = (currentx + x) + "px";
     }
   }
-}
+};
 
 function setUpInteraction() {
   // cache elements
   container = document.getElementById("container");
   panes.slider = $("#inner")[0];
   var bodyEl = $("body")[0];
-  
+
   if (isiOs()) {
     // set size of container
     if (isTablet()) {
@@ -52,47 +52,25 @@ function setUpInteraction() {
       panes.width = dimensions.iPhone.width;
       $("#inner").addClass("iphone");
     }
-    
+
     // add global event listeners
     addEventListener("orientationchange", checkOrientation);
     checkOrientation();
     bodyEl.ontouchstart = function(e) {
       var touch = e.touches[0];
       touches.first = [touch.pageX, touch.pageY];
-    }
+    };
     bodyEl.ontouchmove = function(e) {
-      var touch = e.touches[0]
+      var touch = e.touches[0];
       touches.last = touches.current;
       touches.current = [touch.pageX, touch.pageY];
       panes.moveTo(mathHelper.distance(touches.last, touches.current));
       e.preventDefault();
-    }
-    bodyEl.ontouchend = function() {
-      panes.moveTo(80);
-      touches.last,touches.current = [];
-    }
-    /*
-    bodyEl.ontouchstart = function(e) {
-      var touch = e.touches[0];
-      touches.first = [touch.pageX, touch.pageY];
-    }
-    bodyEl.ontouchmove = function(e) {
-      var touch = e.touches[0];
-      touches.last = [touch.pageX, touch.pageY];
-      e.preventDefault();
     };
     bodyEl.ontouchend = function() {
-      var statusString = "";
-      statusString += touches.last[0] + ", " + touches.last[1] + " ended <br />";
-      statusString += "Angle: " + mathHelper.angle(touches.first, touches.last) + "&deg; <br />";
-      statusString += "Distance: " + mathHelper.distance(touches.first, touches.last) + "px <br />"
-      statusString += "Direction: " + mathHelper.direction(touches.first, touches.last);
-      console.log(statusString);
-    }
-    */
-  } else {
-    // add buttons
-    // keyboard events
+      panes.moveTo(80);
+      touches.last, touches.current = [];
+    };
   }
 }
 
@@ -116,27 +94,19 @@ function checkOrientation() {
 }
 
 var mathHelper = {
-  angle : function(coord0, coord1) { // arrays w/ two elements ea.
-    var adjacent = Math.abs(coord0[1] - coord1[1]);
-    var opposite = Math.abs(coord0[0] - coord1[0]);
-    return Math.atan(adjacent/opposite) * (180/Math.PI);
-  },
   distance : function(coord0, coord1) { // arrays w/ two elements ea.
     var rise = Math.abs(coord0[1] - coord1[1]);
     var run = Math.abs(coord0[0] - coord1[0]);
     return Math.sqrt((rise * rise) + (run * run));
   },
-  direction : function(coord0, coord1) {
-    return coord0[0] > coord1[0] ? "left" : "right";
-  },
-  isNaN : function(num) { 
-    if (num == 0) { 
-      return false 
-    } else { 
-      return !(0 > num || 0 < num); 
-    } 
+  isNaN : function(num) {
+    if (num === 0) {
+      return false;
+    } else {
+      return !(0 > num || 0 < num);
+    }
   }
-}
+};
 
 function isiOs() {
   return navigator.platform.match(/(iPad|iPod|iPhone)/i) ? true : false;
